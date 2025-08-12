@@ -79,7 +79,7 @@ if st.button("Encontrar palavras"):
             if filtered_results:
                 # Create DataFrame
                 df = pd.DataFrame({
-                    "Palavra": [st.markdown(highlight_letter(w, mandatory.lower())) for w in filtered_results],
+                    "Palavra": [w for w in filtered_results],
                     "Tamanho": [len(w) for w in filtered_results]
                 })
 
