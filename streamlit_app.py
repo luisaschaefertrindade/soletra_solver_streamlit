@@ -47,7 +47,7 @@ def highlight_letter(word, letter):
     return word.replace(letter, f":red[{letter}]")
 
 # --- Streamlit UI ---
-st.set_page_config(page_title="Soletra Resolver", page_icon="🔤", layout="centered")
+st.set_page_config(page_title="Soletreiro", page_icon="🔤", layout="centered")
 
 st.title("Soletreiro")
 st.markdown("Encontre palavras com base na letra obrigatória e letras complementares.")
