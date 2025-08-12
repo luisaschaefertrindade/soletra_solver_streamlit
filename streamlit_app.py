@@ -3,8 +3,13 @@ import pandas as pd
 import re
 import spacy
 
-# Load spaCy Portuguese model
-nlp = spacy.load("pt_core_news_sm")
+try:
+    nlp = spacy.load("pt_core_news_sm")
+except OSError:
+    with st.spinner("Downloading Portuguese language model..."):
+        from spacy.cli import download
+        download("pt_core_news_sm")
+    nlp = spacy.load("pt_core_news_sm")
 
 # Path to vocabulary file
 VOCAB_FILE = 'palavras.txt'
